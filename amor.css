@@ -1,0 +1,80 @@
+body {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+    height: 40vh;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* CORAZONES FLOTANTES */
+.hero::before {
+    content: "💖 💕 💘 💞 💓 💗";
+    position: absolute;
+    font-size: 2rem;
+    animation: floatHearts 10s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes floatHearts {
+    0% {transform: translateY(100px) translateX(0);}
+    100% {transform: translateY(-500px) translateX(50px);}
+}
+
+/* VIDEO CARDS */
+.video-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.video-card img {
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #fff5f7;
+    transition: transform 0.3s ease;
+}
+
+.video-card h5 {
+    margin-top: 0.5rem;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    font-family: 'Cursive', sans-serif;
+}
+
+.video-card img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
