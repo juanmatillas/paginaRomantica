@@ -41,7 +41,7 @@ body {
     margin-top: 10px;
 }
 
-/* TARJETA */
+/* TARJETA PRINCIPAL */
 .video-card {
     cursor: pointer;
     transition: transform 0.3s;
@@ -54,7 +54,7 @@ body {
 /* BOTON VOLVER EN MODAL */
 .volver-btn {
     border-radius: 30px;
-    padding: 8px 18px;
+    padding: 12px 22px;
     font-weight: 500;
     margin-left: auto;
 }
@@ -64,11 +64,15 @@ body {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
     border-radius: 12px;
+    max-width: 100%;
 }
 
-.gallery-img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(255, 92, 138, 0.5);
+/* ZOOM GRANDE AL PASAR O CLICAR */
+.gallery-img:hover,
+.gallery-img:active {
+    transform: scale(1.7); /* zoom grande pero contenido en pantalla */
+    box-shadow: 0 12px 25px rgba(0, 191, 255, 0.5); /* sombra azul */
+    z-index: 10;
 }
 
 /* HEADER DEL MODAL FIJO */
@@ -83,19 +87,30 @@ body {
     justify-content: space-between;
 }
 
+/* TÍTULO DEL MODAL */
+#galeriaViaje .modal-title {
+    color: white; /* Texto en blanco */
+}
+
+/* Corazones azules */
+#galeriaViaje .modal-title span.corazon {
+    color: #00bfff;
+}
+
 /* MENSAJE FINAL */
 .final-message {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: bold;
-    color: #ff5c8a;
     margin-top: 30px;
     margin-bottom: 50px;
+    color: #00bfff; /* corazones */
 }
 
 /* ===== AJUSTES PARA MÓVIL ===== */
 @media (max-width: 768px) {
 
+    /* HERO */
     .hero {
         height: 70vh;
     }
@@ -110,40 +125,51 @@ body {
         padding: 0 20px;
     }
 
+    /* TARJETAS PRINCIPALES MÁS GRANDES */
+    .col-10.col-sm-8.col-md-6 {
+        flex: 0 0 90%;
+        max-width: 90%;
+    }
+
     .video-card h5 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     .video-card img {
         border-radius: 16px;
     }
 
+    /* BOTONES */
     .btn, .volver-btn {
-        font-size: 1.1rem;
-        padding: 12px 20px;
-    }
-
-    .modal-title {
-        font-size: 1.2rem;
-        padding-right: 10px;
-    }
-
-    .final-message {
         font-size: 1.3rem;
+        padding: 14px 24px;
+    }
+
+    /* MODAL GALERÍA: 2 fotos por fila en móvil y tablets pequeñas */
+    #galeriaFotos .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* MENSAJE FINAL */
+    .final-message {
+        font-size: 1.5rem;
         margin-top: 20px;
         margin-bottom: 30px;
         padding: 0 10px;
     }
+
 }
 
+/* AJUSTES MÓVIL PEQUEÑO */
 @media (max-width: 576px) {
     .modal-title {
-        font-size: 1rem;
+        font-size: 1.1rem;
         padding-right: 10px;
     }
 
     .modal-header-custom button {
-        font-size: 0.9rem;
-        padding: 8px 12px;
+        font-size: 1rem;
+        padding: 10px 14px;
     }
 }
