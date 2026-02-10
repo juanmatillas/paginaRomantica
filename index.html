@@ -76,7 +76,7 @@
 
 <!-- MODAL SPOTIFY -->
 <div class="modal fade" id="spotifyModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content bg-dark p-3">
 
       <div class="modal-header modal-header-custom border-0">
@@ -86,8 +86,16 @@
 
       <div class="modal-body text-center">
         <p>Disfruta de nuestra playlist en Spotify:</p>
-        <a href="https://open.spotify.com/playlist/6mB6sAQCKldzuSMUNbw2j6?si=4jxWa4NIRCiemrh6hbxw5A&pi=EpjRMo2PQhyJ9" 
-           target="_blank" class="spotify-btn">Abrir en Spotify</a>
+
+        <!-- IFRAME SPOTIFY -->
+        <div class="spotify-container my-3">
+          <iframe src="https://open.spotify.com/embed/playlist/6mB6sAQCKldzuSMUNbw2j6"
+                  width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+
+        <!-- BOTÓN ABRIR EN SPOTIFY -->
+        <a href="https://open.spotify.com/playlist/6mB6sAQCKldzuSMUNbw2j6"
+           target="_blank" class="btn btn-primary mt-3">Abrir en Spotify</a>
       </div>
 
     </div>
