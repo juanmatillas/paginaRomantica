@@ -7,8 +7,14 @@ body {
 
 /* HERO */
 .hero {
-    height: 60vh;
-    background-image: url("img/Fondo.jpeg");
+    height: 65vh;
+    background: linear-gradient(
+        to bottom,
+        rgba(20, 20, 20, 0.9),
+        rgba(20, 20, 20, 0.7),
+        #0d0d0d
+    ),
+    url("img/Fondo.jpeg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -45,14 +51,24 @@ body {
     transform: scale(1.05);
 }
 
+/* BOTON VOLVER EN MODAL */
+.volver-btn {
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-weight: 500;
+    margin-left: auto;
+}
+
 /* GALERÍA */
 .gallery-img {
-    transition: transform 0.3s;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
+    border-radius: 12px;
 }
 
 .gallery-img:hover {
-    transform: scale(1.08);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 92, 138, 0.5);
 }
 
 /* HEADER DEL MODAL FIJO */
@@ -64,17 +80,70 @@ body {
     backdrop-filter: blur(6px);
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
-/* AJUSTES MÓVIL */
+/* MENSAJE FINAL */
+.final-message {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff5c8a;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+/* ===== AJUSTES PARA MÓVIL ===== */
+@media (max-width: 768px) {
+
+    .hero {
+        height: 70vh;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+        padding: 0 15px;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+
+    .video-card h5 {
+        font-size: 1.2rem;
+    }
+
+    .video-card img {
+        border-radius: 16px;
+    }
+
+    .btn, .volver-btn {
+        font-size: 1.1rem;
+        padding: 12px 20px;
+    }
+
+    .modal-title {
+        font-size: 1.2rem;
+        padding-right: 10px;
+    }
+
+    .final-message {
+        font-size: 1.3rem;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+}
+
 @media (max-width: 576px) {
     .modal-title {
         font-size: 1rem;
-        padding-right: 30px;
+        padding-right: 10px;
     }
 
     .modal-header-custom button {
-        font-size: 0.85rem;
-        padding: 6px 10px;
+        font-size: 0.9rem;
+        padding: 8px 12px;
     }
 }
