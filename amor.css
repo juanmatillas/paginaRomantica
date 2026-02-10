@@ -41,14 +41,15 @@ body {
     margin-top: 10px;
 }
 
+/* Clase para todos los corazones azul clarito */
+.corazon {
+    color: #5AC8FA; /* azul clarito estilo iPhone */
+}
+
 /* TARJETA PRINCIPAL */
 .video-card {
     cursor: pointer;
     transition: transform 0.3s;
-}
-
-.video-card:hover {
-    transform: scale(1.05);
 }
 
 /* BOTON VOLVER EN MODAL */
@@ -61,17 +62,17 @@ body {
 
 /* GALERÍA */
 .gallery-img {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
     border-radius: 12px;
     max-width: 100%;
 }
 
-/* ZOOM CONTROLADO */
+/* ZOOM GRANDE AL PASAR O CLICAR */
 .gallery-img:hover,
 .gallery-img:active {
-    transform: scale(1.5); /* zoom grande pero contenido en pantalla */
-    box-shadow: 0 12px 25px rgba(0, 191, 255, 0.5);
+    transform: scale(1.5); /* zoom contenido en pantalla */
+    box-shadow: 0 12px 25px rgba(90,200,250,0.5); /* sombra azul clarito */
     z-index: 10;
 }
 
@@ -87,34 +88,17 @@ body {
     justify-content: space-between;
 }
 
-/* TÍTULO DEL MODAL */
-#galeriaViaje .modal-title,
-#spotifyModal .modal-title {
-    color: white; /* Texto en blanco */
+/* TEXTO DENTRO DE MODALES */
+.modal-content,
+.modal-body,
+.modal-title,
+.modal-body p {
+    color: white; /* texto visible en fondo oscuro */
 }
 
-/* Corazones azules */
-#galeriaViaje .modal-title span.corazon,
-h5 span.corazon {
-    color: #00bfff;
-}
-
-/* BOTÓN SPOTIFY */
-.spotify-btn {
-    display: inline-block;
-    background-color: #1db954;
-    color: white;
-    font-weight: bold;
-    padding: 12px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-    margin-top: 15px;
-}
-
-.spotify-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(29, 185, 84, 0.6);
+/* SPOTIFY IFRAME */
+.spotify-container iframe {
+    border-radius: 12px;
 }
 
 /* MENSAJE FINAL */
@@ -124,7 +108,7 @@ h5 span.corazon {
     font-weight: bold;
     margin-top: 30px;
     margin-bottom: 50px;
-    color: #00bfff;
+    color: #5AC8FA; /* azul clarito */
 }
 
 /* ===== AJUSTES PARA MÓVIL ===== */
@@ -146,10 +130,9 @@ h5 span.corazon {
     }
 
     /* TARJETAS PRINCIPALES MÁS GRANDES */
-    .col-6 {
+    .col-10.col-sm-8.col-md-6 {
         flex: 0 0 90%;
         max-width: 90%;
-        margin: 0 auto;
     }
 
     .video-card h5 {
@@ -161,21 +144,15 @@ h5 span.corazon {
     }
 
     /* BOTONES */
-    .btn, .volver-btn, .spotify-btn {
+    .btn, .volver-btn {
         font-size: 1.3rem;
         padding: 14px 24px;
     }
 
-    /* MODAL GALERÍA: 2 fotos por fila en móvil */
+    /* MODAL GALERÍA: 2 fotos por fila en móvil y tablets pequeñas */
     #galeriaFotos .col-6 {
         flex: 0 0 50%;
         max-width: 50%;
-    }
-
-    /* MODAL SPOTIFY: más grande en móvil */
-    #spotifyModal .modal-dialog {
-        max-width: 95%;
-        margin: 1rem auto;
     }
 
     /* MENSAJE FINAL */
@@ -185,6 +162,7 @@ h5 span.corazon {
         margin-bottom: 30px;
         padding: 0 10px;
     }
+
 }
 
 /* AJUSTES MÓVIL PEQUEÑO */
@@ -197,11 +175,5 @@ h5 span.corazon {
     .modal-header-custom button {
         font-size: 1rem;
         padding: 10px 14px;
-    }
-
-    /* Asegurar que las tarjetas no queden demasiado pequeñas */
-    .col-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
     }
 }
