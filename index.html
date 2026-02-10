@@ -15,30 +15,29 @@
 <!-- HERO -->
 <header class="hero text-center text-white">
     <div class="hero-overlay">
-        <h1>Para ti gorda 💙</h1>
+        <h1>Para ti gorda ❤️</h1>
         <p>Un pequeño recuerdo de todo lo nuestro</p>
     </div>
 </header>
 
 <!-- CONTENIDO -->
 <main class="container my-5">
-
     <div class="row justify-content-center g-4">
 
         <!-- GALERÍA DE FOTOS -->
         <div class="col-10 col-sm-6 col-md-4">
             <div class="video-card" data-bs-toggle="modal" data-bs-target="#galeriaViaje">
                 <img src="img/portadaViajeCordoba.jpeg" class="img-fluid rounded">
-                <h5 class="mt-3 text-center">Nuestro viaje a Córdoba 💙</h5>
+                <h5 class="mt-3 text-center">Nuestro viaje a Córdoba <span class="corazon">💙</span></h5>
             </div>
         </div>
 
         <!-- VIDEO YOUTUBE -->
         <div class="col-10 col-sm-6 col-md-4">
             <div class="video-card"
-                 onclick="window.open('https://www.youtube.com/watch?v=InWLCcI3tD0&list=RDInWLCcI3tD0&start_radio=1','_blank')">
+                 onclick="window.open('https://youtu.be/InWLCcI3tD0','_blank')">
                 <img src="img/portadaVideo.jpeg" class="img-fluid rounded">
-                <h5 class="mt-3 text-center">Nuestro vídeo 💙</h5>
+                <h5 class="mt-3 text-center">Nuestro vídeo <span class="corazon">💙</span></h5>
             </div>
         </div>
 
@@ -46,7 +45,7 @@
         <div class="col-10 col-sm-6 col-md-4">
             <div class="video-card" data-bs-toggle="modal" data-bs-target="#spotifyModal">
                 <img src="img/portadaSpotify.jpeg" class="img-fluid rounded">
-                <h5 class="mt-3 text-center">Canciones que me recuerdan a ti 💙</h5>
+                <h5 class="mt-3 text-center">Canciones que me recuerdan a ti <span class="corazon">💙</span></h5>
             </div>
         </div>
 
@@ -58,9 +57,9 @@
   <div class="modal-dialog modal-fullscreen">
     <div class="modal-content bg-dark">
 
-      <div class="modal-header modal-header-custom">
-        <h5 class="modal-title text-white">Nuestro viaje a Córdoba 💙</h5>
-        <button type="button" class="btn btn-primary volver-btn" data-bs-dismiss="modal">Volver</button>
+      <div class="modal-header modal-header-custom border-0">
+        <h5 class="modal-title">Nuestro viaje a Córdoba <span class="corazon">💙</span></h5>
+        <button type="button" class="btn btn-light volver-btn" data-bs-dismiss="modal">Volver</button>
       </div>
 
       <div class="modal-body">
@@ -78,32 +77,17 @@
 <!-- MODAL SPOTIFY -->
 <div class="modal fade" id="spotifyModal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-dark">
-      
-      <div class="modal-header border-0">
-        <h5 class="modal-title text-white">Canciones que me recuerdan a ti 💙</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-      </div>
-      
-      <div class="modal-body p-3 text-center">
-        <!-- Reproductor embebido -->
-        <iframe 
-            src="https://open.spotify.com/embed/playlist/6mB6sAQCKldzuSMUNbw2j6"
-            width="100%" 
-            height="380" 
-            frameborder="0" 
-            allowtransparency="true" 
-            allow="encrypted-media">
-        </iframe>
+    <div class="modal-content bg-dark p-3">
 
-        <!-- Botón para abrir directamente en Spotify -->
-        <div class="mt-3">
-          <a href="https://open.spotify.com/playlist/6mB6sAQCKldzuSMUNbw2j6" 
-             target="_blank" 
-             class="btn btn-primary">
-             Abrir en Spotify
-          </a>
-        </div>
+      <div class="modal-header modal-header-custom border-0">
+        <h5 class="modal-title">Canciones que me recuerdan a ti <span class="corazon">💙</span></h5>
+        <button type="button" class="btn btn-light volver-btn" data-bs-dismiss="modal">Volver</button>
+      </div>
+
+      <div class="modal-body text-center">
+        <p>Disfruta de nuestra playlist en Spotify:</p>
+        <a href="https://open.spotify.com/playlist/6mB6sAQCKldzuSMUNbw2j6?si=4jxWa4NIRCiemrh6hbxw5A&pi=EpjRMo2PQhyJ9" 
+           target="_blank" class="spotify-btn">Abrir en Spotify</a>
       </div>
 
     </div>
@@ -120,7 +104,7 @@
 
     for (let i = 1; i <= totalFotos; i++) {
         contenedor.innerHTML += `
-            <div class="col-6 col-md-6 col-lg-3">
+            <div class="col-6 col-md-4 col-lg-3">
                 <img src="img/viajeCordoba/${i}.jpeg" class="img-fluid rounded gallery-img">
             </div>
         `;
